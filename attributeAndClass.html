@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML and Value</title>
+    <style>
+        .azatar {
+            background-color: red;
+            color: blue;
+            width: 233px;
+            border: 2px solid blue;
+            padding: 34px;
+        }
+
+        .blue {
+            background-color: blue;
+            padding: 34px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="welcome">Welcome to my form</div>
+        <form action="">
+            <input type="text" id="username" value="Azatar">
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div class="container">
+        <img id="image" height="200px" src="https://static.vecteezy.com/system/resources/thumbnails/023/009/485/small_2x/abstract-animal-owl-portrait-with-colorful-double-exposure-paint-with-generative-ai-free-photo.jpeg" alt="">
+
+        <button id="btn" onclick="func1()">Remove Blue</button>
+    </div>
+    <script>
+        const img = document.getElementById("image")
+        img.setAttribute("alt", "A beautiful owl")
+       // img.removeAttribute("alt")
+        console.log(img.getAttribute("alt"))
+
+      //  img.classList.add("aztar")
+
+        function func1() {
+          //  img.classList.remove("azatar")
+            img.classList.toggle("blue")
+            if(img.classList.contains("blue")) {
+                document.getElementById("btn").innerText = "Remove Blue";
+            } else {
+                document.getElementById("btn").innerText = "Add Blue"
+            }
+            
+        }
+    </script>
+</body>
+</html>
